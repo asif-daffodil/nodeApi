@@ -1,0 +1,45 @@
+<%- include('./header.ejs') -%>
+<body>
+  <div class="container">
+    <div class="row min-vh-100 d-flex">
+      <div class="col-md-10 m-auto">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-auto">
+            <img src="<%= picture %>" alt="" class="img-fluid" />
+          </div>
+          <div class="col-auto">
+            <table class="table">
+              <tr>
+                <td>Id</td>
+                <td>:</td>
+                <td><%= _id %></td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td>:</td>
+                <td><%= name %></td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td>:</td>
+                <td><%= gender %></td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>:</td>
+                <td><%= contact %></td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>:</td>
+                <td><%= address %></td>
+              </tr>
+            </table>
+            <a href="/user/random" class="btn btn-primary btn-sm">Reload</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('./footer.ejs') -%>
