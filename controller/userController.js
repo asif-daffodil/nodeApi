@@ -1,14 +1,13 @@
 const express = require("express");
 const app = express();
 const api = require("../api/api.json");
-const checkLimitParams = require("../middleware/checkLimitParams");
 const getRandomUser = (req, res) => {
   res.render("randomUser.ejs", api[Math.floor(Math.random() * api.length)]);
 };
 
 const getAllUser = (req, res) => {
-  console.log(checkLimitParams);
-  res.render("allUser.ejs", { users: api });
+  let limit = req.query.limit;
+  res.render("allUser.ejs", { users: api, limit: limit });
 };
 
 module.exports = { getRandomUser, getAllUser };

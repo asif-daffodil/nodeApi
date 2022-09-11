@@ -12,7 +12,7 @@
             <th>Phone</th>
             <th>Address</th>
           </tr>
-          <% users.forEach(user => { %>
+          <% users.slice(0, limit).forEach(user => { %>
           <tr>
             <td><%= user._id %></td>
             <td>
@@ -25,8 +25,19 @@
           </tr>
           <% }); %>
         </table>
+        <div class="">
+          <button class="btn fs-5">Limit :</button>
+          <button class="btn btn-primary" onclick="limit(5)">5</button>
+          <button class="btn btn-primary" onclick="limit(10)">10</button>
+          <button class="btn btn-primary" onclick="limit(20)">20</button>
+        </div>
       </div>
     </div>
   </div>
+  <script>
+    const limit = (l) => {
+      location.href = "";
+    };
+  </script>
 </body>
 <%- include('./footer.ejs') -%>

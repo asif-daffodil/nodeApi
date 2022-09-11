@@ -1,7 +1,8 @@
-let limit;
 const checkLimitParams = (req, res, next) => {
-  res.send("halum");
+  if (!req.query.limit) {
+    res.redirect("/user/all?limit=5");
+  }
   next();
 };
 
-module.export = { checkLimitParams };
+module.exports = { checkLimitParams };
