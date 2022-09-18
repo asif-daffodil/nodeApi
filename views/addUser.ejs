@@ -1,0 +1,73 @@
+<%- include('./header.ejs') -%>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 m-auto">
+        <div class="h2 mb-3">Add New User</div>
+        <form action="/user/save" method="post">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="User Name"
+              name="uname"
+            />
+          </div>
+          <div class="mb-3">
+            <div class="form-check form-check-inline">
+              <label for="" class="form-check-lebel">Gender :</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                type="radio"
+                class="form-check-input"
+                value="Male"
+                name="gender"
+              />
+              <label for="" class="form-check-lebel">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                type="radio"
+                class="form-check-input"
+                value="Female"
+                name="gender"
+              />
+              <label for="" class="form-check-lebel">Female</label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Phone"
+              name="phone"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Address"
+              name="address"
+            />
+          </div>
+          <div class="mb-3">
+            <input type="file" class="form-control" name="picture" />
+          </div>
+          <div>
+            <input type="submit" class="btn btn-primary" value="Add User" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    const limit = (l) => {
+      locationObj = new URLSearchParams(location.search);
+      locationObj.set("limit", l);
+      location.search = locationObj;
+    };
+  </script>
+</body>
+<%- include('./footer.ejs') -%>

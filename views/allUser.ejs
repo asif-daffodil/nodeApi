@@ -36,7 +36,9 @@
   </div>
   <script>
     const limit = (l) => {
-      location.href = "";
+      locationObj = new URLSearchParams(location.search);
+      locationObj.set("limit", l);
+      location.search = locationObj;
     };
   </script>
 </body>
